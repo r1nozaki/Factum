@@ -5,7 +5,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa';
 
-const Socials = () => {
+const Socials = ({ dark }) => {
   const SocialsIcon = [
     {
       icon: <FaTwitter />,
@@ -29,13 +29,18 @@ const Socials = () => {
     },
   ];
   return (
-    <div className='flex items-center gap-4 w-full'>
+    <div className='flex items-center justify-center lg:justify-start gap-4 w-full'>
       {SocialsIcon.map(social => (
         <a
           key={social.alt}
           href={social.link}
           alt={social.alt}
-          className='flex items-center justify-center rounded-full border-1 border-white w-10 h-10 transition-colors duration-300 hover:bg-white text-white hover:text-black'
+          target='_blank'
+          className={`flex items-center justify-center rounded-full border-1 ${
+            dark
+              ? 'border-black hover:bg-black text-black hover:text-white'
+              : 'border-white hover:bg-white text-white hover:text-black'
+          } w-10 h-10 transition-colors duration-300 `}
         >
           {social.icon}
         </a>

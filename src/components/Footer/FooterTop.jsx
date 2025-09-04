@@ -46,7 +46,7 @@ const FooterTop = () => {
           </ul>
           <ul className='flex flex-col gap-3'>
             {navLink.map(link => (
-              <li>
+              <li key={link.label}>
                 <Link to={link.path} className='text-base hover:underline'>
                   {link.label}
                 </Link>

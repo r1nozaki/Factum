@@ -1,8 +1,10 @@
 import Btn from '../UI/Btn';
 
-const HeaderSubscribe = () => {
+const HeaderSubscribe = ({ subscribe, setOpenSubscribe }) => {
   return (
-    <Btn className='text-black border hover:bg-black hover:text-white '>Subscribe</Btn>
+    <Btn className='hidden lg:block text-black border hover:bg-black hover:text-white '>
+      Subscribe
+    </Btn>
   );
 };
 

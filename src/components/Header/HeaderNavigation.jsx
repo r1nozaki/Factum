@@ -10,17 +10,18 @@ const HeaderNavigation = () => {
     { path: '/entertainment', label: 'entertainment' },
   ];
   return (
-    <nav className='flex items-center'>
-      <ul className='hidden lg:flex gap-6 xl:gap-10'>
-        {navItems.map(link => (
-          <Link key={link.label} to={link.path}>
-            <li className='font-semibold uppercase text-sm text-black transition-colors duration-300 hover:text-red-500'>
-              {link.label}
-            </li>
+    <>
+      {navItems.map(({ path, label }) => (
+        <li key={label} className='sm:w-full mb-6 lg:mb-0'>
+          <Link
+            to={path}
+            className='font-semibold text-sm lg:text-base uppercase transition-colors duration-300 hover:text-red-500'
+          >
+            {label}
           </Link>
-        ))}
-      </ul>
-    </nav>
+        </li>
+      ))}
+    </>
   );
 };
 
