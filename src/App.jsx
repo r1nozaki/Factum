@@ -1,5 +1,5 @@
 import Layout from './components/Layout';
-import HomePage from './pages/HomePage';
+import { routes } from './router/index';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 
 import './App.css';
@@ -10,7 +10,13 @@ function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path='/' element={<HomePage />} />
+            {routes.map(route => (
+              <Route
+                key={route.path}
+                element={<route.component />}
+                path={route.path}
+              />
+            ))}
           </Routes>
         </Layout>
       </Router>

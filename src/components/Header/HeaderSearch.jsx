@@ -2,11 +2,14 @@ import { AnimatePresence, motion } from 'motion/react';
 import { Search } from 'lucide-react';
 import Label from '../UI/Label';
 import BtnLink from '../UI/BtnLink';
+import useBlockScroll from '../../hooks/useBlockScroll';
 
 const HeaderSearch = ({ search, setOpenSearch, query, setQuery }) => {
   const handleSearch = () => {
     setOpenSearch(!search);
   };
+
+  useBlockScroll(search);
 
   return (
     <>
@@ -44,7 +47,8 @@ const HeaderSearch = ({ search, setOpenSearch, query, setQuery }) => {
                       type='text'
                       onChange={e => setQuery(e.target.value)}
                       value={query}
-                      className='border border-gray-200 px-5 w-full h-10 lg:h-11 rounded outline-none focus:border-black transition-all duration-300 pl-9 lg:pl-10'
+                      className='border border-gray-200 px-5 w-full h-10 lg:h-11 rounded outline-none focus:border-black transition-all duration-300 pl-9 lg:pl-10 text-base'
+                      placeholder='Search on Factum'
                     />
                   </Label>
                   <BtnLink

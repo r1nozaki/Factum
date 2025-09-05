@@ -5,17 +5,20 @@ import { Link } from 'react-router';
 import Socials from '../Socials';
 import HeaderNavigation from './HeaderNavigation';
 import useIsDesktop from '../../hooks/useIsDesktop';
+import useBlockScroll from '../../hooks/useBlockScroll';
 
 const menuLink = [
-  { path: '/about', label: 'About' },
-  { path: '/authors', label: 'Authors' },
-  { path: '/contact', label: 'Contact' },
+  { path: '/about', label: 'about us' },
+  { path: '/authors', label: 'authors' },
+  { path: '/contact', label: 'contact' },
 ];
 
 const HeaderMenu = ({ menu, setOpenMenu }) => {
   const desktop = useIsDesktop();
 
   const handleMenu = () => setOpenMenu(!menu);
+
+  useBlockScroll(menu);
 
   return (
     <>
@@ -36,7 +39,7 @@ const HeaderMenu = ({ menu, setOpenMenu }) => {
               animate={{ opacity: 0.5 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className='fixed inset-0 bg-black'
+              className='fixed inset-0 bg-black '
               onClick={handleMenu}
             />
 
