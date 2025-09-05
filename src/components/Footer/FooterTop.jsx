@@ -13,7 +13,7 @@ const FooterTop = () => {
   ];
 
   const navLink = [
-    { path: '/about', label: 'About' },
+    { path: '/about', label: 'About Us' },
     { path: '/authors', label: 'Authors' },
     { path: '/contact', label: 'Contact' },
   ];
