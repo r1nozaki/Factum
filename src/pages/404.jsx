@@ -7,8 +7,8 @@ const Page404 = () => {
       <div className='w-full flex-col justify-items-center'>
         <h1 className='text-9xl text-red-500 font-bold '>404</h1>
         <span className='block mb-3 text-xl'>Page not found!</span>
-        <BtnLink className='bg-red-500 text-white'>
-          <Link to='/'>Back to home</Link>
+        <BtnLink className='bg-red-500 text-white block' link={'/'}>
+          Back to home
         </BtnLink>
       </div>
     </section>

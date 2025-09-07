@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'motion/react';
 import useBlockScroll from '../../hooks/useBlockScroll';
 import Btn from '../UI/Btn';
-import { X, Mail } from 'lucide-react';
+import { X, Mail, MailPlus } from 'lucide-react';
 import Label from '../UI/Label';
 import BtnLink from '../UI/BtnLink';
 
@@ -63,7 +63,9 @@ const HeaderSubscribe = ({ subscribe, setOpenSubscribe }) => {
                       className='relative w-full h-10 lg:h-11 text-base px-5 rounded outline-none border border-gray-200 bg-white focus:border-black transition-all duration-300 pl-9 lg:pl-10'
                     />
                   </Label>
-                  <BtnLink className='bg-black text-white'>Subcribe</BtnLink>
+                  <Btn className='bg-black text-white'>
+                    Subcribe <MailPlus />
+                  </Btn>
                 </form>
               </div>
             </motion.div>
