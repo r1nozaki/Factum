@@ -5,15 +5,12 @@ const AuthorCard = ({ ava, name, position }) => {
     <div className='relative w-full flex flex-col items-center'>
       <div className='w-11 h-11 rounded-full mb-3 overflow-hidden'>
         <div className='w-full bg-gray-200'>
-          <Link
-            to=''
-            className='w-full h-full object-cover object-center will-change-transform transition-all duration-300 hover:scale-110 hover:brightness-90'
-          >
+          <Link to='' className='w-full h-full object-cover object-center '>
             <img
               src={ava}
               alt={name}
               loading='lazy'
-              className=' w-full h-full object-cover object-center'
+              className=' w-full h-full object-cover object-center will-change-transform transition-all duration-300 hover:scale-110 hover:brightness-90'
             />
           </Link>
         </div>

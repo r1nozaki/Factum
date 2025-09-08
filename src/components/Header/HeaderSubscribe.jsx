@@ -3,7 +3,6 @@ import useBlockScroll from '../../hooks/useBlockScroll';
 import Btn from '../UI/Btn';
 import { X, Mail, MailPlus } from 'lucide-react';
 import Label from '../UI/Label';
-import BtnLink from '../UI/BtnLink';
 
 const HeaderSubscribe = ({ subscribe, setOpenSubscribe }) => {
   useBlockScroll(subscribe);
