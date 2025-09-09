@@ -18,7 +18,7 @@ const HeaderSearch = ({ search, setOpenSearch, query, setQuery }) => {
           onClick={handleSearch}
           className='hover:text-red-500 transition-colors duration-300 hover:cursor-pointer'
         >
-          <Search size={28} />
+          <Search size={28} strokeWidth={1} />
         </button>
       )}
       <AnimatePresence>

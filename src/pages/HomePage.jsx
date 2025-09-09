@@ -1,5 +1,10 @@
+import TopNews from '../components/Hero/TopNews';
 const HomePage = () => {
-  return <section className='min-h-screen'></section>;
+  return (
+    <>
+      <TopNews />
+    </>
+  );
 };
 
 export default HomePage;

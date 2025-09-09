@@ -27,7 +27,7 @@ const HeaderMenu = ({ menu, setOpenMenu }) => {
           onClick={handleMenu}
           className='hover:text-red-500 transition-colors duration-300 hover:cursor-pointer'
         >
-          <Menu size={28} />
+          <Menu size={28} strokeWidth={1} />
         </button>
       )}
 
