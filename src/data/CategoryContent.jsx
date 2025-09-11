@@ -1,6 +1,6 @@
 import {
   Trophy,
-  Landmark,
+  Cpu,
   BriefcaseBusiness,
   Hospital,
   Microscope,
@@ -14,9 +14,9 @@ const categoryContent = [
     link: '/sports',
   },
   {
-    title: 'Politics',
-    icon: <Landmark size={32} strokeWidth={1} />,
-    link: '/politics',
+    title: 'Technology',
+    icon: <Cpu size={32} strokeWidth={1} />,
+    link: '/technology',
   },
   {
     title: 'Business',

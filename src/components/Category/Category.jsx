@@ -1,4 +1,4 @@
-import BtnCategory from '../UI/BtnCategory';
+import BtnCategory from './BtnCategory';
 import categoryContent from '../../data/CategoryContent';
 
 const Category = () => {

@@ -13,16 +13,16 @@ const TopNews = () => {
 
     getTopOneNews()
       .then(data => setTopNews(data))
-      .catch(err => {
-        setError(err);
+      .catch(() => {
+        setError(true);
       })
       .finally(() => setLoading(false));
   }, []);
 
   if (loading) {
     return (
-      <div className='flex items-center justify-center'>
-        <PropagateLoader />
+      <div className='flex items-center justify-center h-10 m-20'>
+        <PropagateLoader size={20} />
       </div>
     );
   }
@@ -47,17 +47,17 @@ const TopNews = () => {
             Trending
           </span>
         </div>
-        <h1 className='w-full font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-6xl lg:leading-[3.5rem] xl:leading-[4.25rem] sm:line-clamp-3 mb-3'>
+        <h1 className='w-full font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-6xl lg:leading-[3.5rem] xl:leading-[4.25rem] mb-3'>
           {topNews.title}
         </h1>
         <p className='sm:line-clamp-5 mb-4 md:mb-5 text-base'>
-          {topNews.snippet}
+          {topNews.description}
         </p>
         <BtnLink className='bg-red-500 text-white'>More</BtnLink>
       </div>
       <div className='relative w-full h-0 pb-[65%] sm:pb-[60%] lg:pb-[35%] rounded-md overflow-hidden bg-gray'>
         <img
-          src={topNews.image_url}
+          src={topNews.image}
           alt='Photo news'
           className='absolute top-0 left-0 w-full h-full object-cover object-center'
         />

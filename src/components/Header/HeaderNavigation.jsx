@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 const HeaderNavigation = () => {
   const navItems = [
     { path: '/sports', label: 'sports' },
-    { path: '/politics', label: 'politics' },
+    { path: '/technology', label: 'technology' },
     { path: '/business', label: 'business' },
     { path: '/health', label: 'health' },
     { path: '/science', label: 'science' },

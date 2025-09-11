@@ -5,7 +5,7 @@ import Socials from '../Socials';
 const FooterTop = () => {
   const categoriesLink = [
     { path: '/sports', label: 'Sports' },
-    { path: '/politics', label: 'Politics' },
+    { path: '/technology', label: 'Technology' },
     { path: '/business', label: 'Business' },
     { path: '/health', label: 'Health' },
     { path: '/science', label: 'Science' },

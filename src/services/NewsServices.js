@@ -1,27 +1,42 @@
 import axios from 'axios';
 
-const API_KEY = 'zjYcNuCxSgQg9V4KbNULkmCjW4tamt6N4iEjzLIh';
-const BASE_URL = 'https://api.thenewsapi.com/v1/news';
+const API_KEY = '0d03075f54ae00c04f0d140f163ffaf6';
+const BASE_URL = 'https://gnews.io/api/v4';
 
 const api = axios.create({
   baseURL: BASE_URL,
   params: {
-    api_token: API_KEY,
-    locale: 'us',
-    language: 'en',
+    token: API_KEY,
+    lang: 'en',
+    country: 'us',
   },
 });
 
 const getTopOneNews = async () => {
   try {
-    const response = await api.get('/top', {
-      params: { limit: 1 },
+    const response = await api.get('/top-headlines', {
+      params: { max: 1 },
     });
-    return response.data.data[0];
+    return response.data.articles[0];
   } catch (error) {
     console.error('Error receiving top news:', error);
     return null;
   }
 };
 
-export { getTopOneNews };
+const getNewsByCategory = async (category, limit = 10) => {
+  try {
+    const response = await api.get('/top-headlines', {
+      params: {
+        topic: category,
+        max: limit,
+      },
+    });
+    return response.data.articles;
+  } catch (error) {
+    console.error(`Error receiving ${category} news:`, error);
+    return [];
+  }
+};
+
+export { getTopOneNews, getNewsByCategory };

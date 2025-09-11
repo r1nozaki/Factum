@@ -48,7 +48,7 @@ const HeaderMenu = ({ menu, setOpenMenu }) => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.3 }}
-              className='fixed z-10 top-0 right-0 w-full h-full sm:w-[450px] overflow-auto bg-white shadow-lg'
+              className='fixed z-10 top-0 right-0 w-full h-full sm:w-[450px] overflow-auto bg-white shadow-lg flex flex-col justify-between'
             >
               <div className='relative w-full p-6 lg:p-10 border-b border-gray-200'>
                 <button
