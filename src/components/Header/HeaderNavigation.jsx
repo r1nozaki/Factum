@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 
 const HeaderNavigation = () => {
   const navItems = [
@@ -12,14 +12,17 @@ const HeaderNavigation = () => {
   return (
     <>
       {navItems.map(({ path, label }) => (
-        <li key={label} className='sm:w-full mb-6 lg:mb-0'>
-          <Link
-            to={path}
-            className='font-semibold text-sm lg:text-base uppercase transition-colors duration-300 hover:text-red-500'
-          >
-            {label}
-          </Link>
-        </li>
+        <NavLink key={label} to={path} className='sm:w-full mb-6 lg:mb-0'>
+          {({ isActive }) => (
+            <span
+              className={`font-semibold text-sm lg:text-base uppercase ${
+                isActive ? 'text-red-500' : 'text-black'
+              } transition-colors duration-300 hover:text-red-500`}
+            >
+              {label}
+            </span>
+          )}
+        </NavLink>
       ))}
     </>
   );
