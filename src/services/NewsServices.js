@@ -24,18 +24,22 @@ const getTopOneNews = async () => {
   }
 };
 
-const getNewsByCategory = async (category, limit = 10) => {
+const getNewsByCategory = async (category, limit = 10, page = 1) => {
   try {
     const response = await api.get('/top-headlines', {
       params: {
         topic: category,
         max: limit,
+        page,
       },
     });
-    return response.data.articles;
+    return {
+      total: response.data.totalArticles,
+      articles: response.data.articles,
+    };
   } catch (error) {
     console.error(`Error receiving ${category} news:`, error);
-    return [];
+    return { total: 0, articles: [] };
   }
 };
 
