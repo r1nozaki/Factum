@@ -12,7 +12,7 @@ const BusinessSection = () => {
     setLoading(true);
 
     getNewsByCategory('business', 8)
-      .then(data => setNewsCategory(data.articles))
+      .then(data => setNewsCategory(data))
       .catch(() => setError(true))
       .finally(() => setLoading(false));
   }, []);

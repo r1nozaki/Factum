@@ -7,11 +7,11 @@ const Pagination = ({ page, totalPages, setPage, nextPage, prevPage }) => {
   const pages = pagesArray(totalPages);
 
   return (
-    <div className='flex items-center gap-2'>
+    <div className='flex justify-center items-center gap-2'>
       <button
         onClick={prevPage}
         disabled={page === 1}
-        className='px-3 py-1 border rounded disabled:opacity-50'
+        className='px-3 py-1 border rounded disabled:opacity-50 transition-colors duration-300 hover:bg-gray-100 hover:cursor-pointer'
       >
         <ArrowLeft />
       </button>
@@ -20,7 +20,7 @@ const Pagination = ({ page, totalPages, setPage, nextPage, prevPage }) => {
         <button
           key={p}
           onClick={() => setPage(p)}
-          className={`px-3 py-1 border border-gray-300 rounded text-black transition-colors duration-300 hover:bg-red-500 ${
+          className={`px-3 py-1 border border-gray-300 rounded text-black transition-colors duration-300 hover:text-white hover:cursor-pointer hover:bg-red-500 ${
             p === page ? 'bg-red-500 text-white border-none' : ''
           }`}
         >
@@ -31,7 +31,7 @@ const Pagination = ({ page, totalPages, setPage, nextPage, prevPage }) => {
       <button
         onClick={nextPage}
         disabled={page === totalPages}
-        className='px-3 py-1 border rounded disabled:opacity-50'
+        className='px-3 py-1 border rounded disabled:opacity-50 transition-colors duration-300 hover:bg-gray-100 hover:cursor-pointer'
       >
         <ArrowRight />
       </button>

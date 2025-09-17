@@ -19,7 +19,7 @@ const getTopOneNews = async () => {
     });
     return response.data.articles[0];
   } catch (error) {
-    console.error('Error receiving top news:', error);
+    console.error('Error receiving top nzews:', error);
     return null;
   }
 };
@@ -33,13 +33,10 @@ const getNewsByCategory = async (category, limit = 10, page = 1) => {
         page,
       },
     });
-    return {
-      total: response.data.totalArticles,
-      articles: response.data.articles,
-    };
+    return response.data.articles;
   } catch (error) {
     console.error(`Error receiving ${category} news:`, error);
-    return { total: 0, articles: [] };
+    return [];
   }
 };
 

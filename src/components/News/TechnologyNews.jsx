@@ -7,27 +7,29 @@ import CategoryList from '../Category/CategoryList';
 import AboutBanner from '../About/AboutBanner';
 import { PropagateLoader } from 'react-spinners';
 
-const SportsNews = () => {
-  const [sportsNews, setSportsNews] = useState(null);
+const TechnologyNews = () => {
+  const [technologyNews, setTechnologyNews] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const { page, totalPages, nextPage, prevPage, setPage } = usePagination({
-    totalCount: 20,
+    totalCount: 30,
     limit: 10,
   });
 
   useEffect(() => {
     setLoading(true);
 
-    getNewsByCategory('sports', 10, page)
+    getNewsByCategory('technology', 10, page)
       .then(data => {
-        setSportsNews(data);
+        setTechnologyNews(data);
       })
       .catch(() => {
         setError(true);
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+      });
   }, [page]);
 
   if (error) {
@@ -46,7 +48,7 @@ const SportsNews = () => {
     );
   }
 
-  if (!sportsNews) {
+  if (!technologyNews) {
     return null;
   }
 
@@ -55,13 +57,13 @@ const SportsNews = () => {
       <section className='relative w-full mb-10 sm:mb-12 lg:mb-20 xl:mb-24 mt-8 sm:mt-0'>
         <div className='w-full pb-2 sm:pb-3 md:pb-4 lg:pb-5 border-b-2 border-black mb-6 sm:mb-8 lg:mb-10'>
           <h1 className='w-full font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-6xl lg:leading-[3.5rem] xl:leading-[4.25rem] mt-10'>
-            Sports News
+            Technology News
           </h1>
         </div>
         <div className='lg:flex lg:items-start lg:justify-between w-full'>
           <div className='relative w-full lg:w-[67%] xl:w-[70%] mb-10 sm:mb-12 lg:mb-0'>
             <div className='grid sm:grid-cols-2 gap-5 lg:gap-6 w-full mb-8 md:mb-10 lg:mb-12'>
-              {sportsNews.map(news => (
+              {technologyNews.map(news => (
                 <NewsCard
                   key={news.id}
                   src={news.image || 'News preview'}
@@ -72,7 +74,7 @@ const SportsNews = () => {
                   }
                   description={news.description || 'No description'}
                   title={news.title || ''}
-                  link={'/sports'}
+                  link={'/technology'}
                 />
               ))}
             </div>
@@ -98,4 +100,4 @@ const SportsNews = () => {
   );
 };
 
-export default SportsNews;
+export default TechnologyNews;
