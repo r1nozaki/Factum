@@ -13,7 +13,7 @@ const HealthNews = () => {
   const [error, setError] = useState(false);
 
   const { page, totalPages, nextPage, prevPage, setPage } = usePagination({
-    totalCount: 20,
+    totalCount: 10,
     limit: 10,
   });
 
