@@ -8,7 +8,6 @@ const FooterTop = () => {
     { path: '/technology', label: 'Technology' },
     { path: '/business', label: 'Business' },
     { path: '/health', label: 'Health' },
-    { path: '/science', label: 'Science' },
     { path: '/entertainment', label: 'Entertainment' },
   ];
 

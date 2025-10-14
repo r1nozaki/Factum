@@ -13,7 +13,7 @@ const EntertainmentNews = () => {
   const [error, setError] = useState(false);
 
   const { page, totalPages, nextPage, prevPage, setPage } = usePagination({
-    totalCount: 30,
+    totalCount: 20,
     limit: 10,
   });
 

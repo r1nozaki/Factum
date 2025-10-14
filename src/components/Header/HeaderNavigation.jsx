@@ -6,7 +6,6 @@ const HeaderNavigation = () => {
     { path: '/technology', label: 'technology' },
     { path: '/business', label: 'business' },
     { path: '/health', label: 'health' },
-    { path: '/science', label: 'science' },
     { path: '/entertainment', label: 'entertainment' },
   ];
   return (

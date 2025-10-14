@@ -1,11 +1,11 @@
-import Banner from '../components/Banner';
-import AboutInfo from '../components/About/AboutInfo';
-import WhoWeAre from '../components/About/WhoWeAre';
-import TopAuthors from '../components/Authors/TopAuthors';
-import Category from '../components/Category/Category';
-import Subscribe from '../components/Subscribe/Subscribe';
-import { About1, About2 } from '../assets/AboutImg';
-import { aboutContent1, aboutContent2 } from '../data/About';
+import Banner from '../../components/Banner';
+import AboutInfo from '../../components/About/AboutInfo';
+import WhoWeAre from '../../components/About/WhoWeAre';
+import TopAuthors from '../../components/Authors/TopAuthors';
+import Category from '../../components/Category/Category';
+import Subscribe from '../../components/Subscribe/Subscribe';
+import { About1, About2 } from '../../assets/AboutImg';
+import { aboutContent1, aboutContent2 } from '../../data/About';
 const AboutUs = () => {
   return (
     <>

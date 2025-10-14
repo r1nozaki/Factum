@@ -1,11 +1,4 @@
-import {
-  Trophy,
-  Cpu,
-  BriefcaseBusiness,
-  Hospital,
-  Microscope,
-  Film,
-} from 'lucide-react';
+import { Trophy, Cpu, BriefcaseBusiness, Hospital, Film } from 'lucide-react';
 
 const categoryContent = [
   {
@@ -28,11 +21,7 @@ const categoryContent = [
     icon: <Hospital size={32} strokeWidth={1} />,
     link: '/health',
   },
-  {
-    title: 'Science',
-    icon: <Microscope size={32} strokeWidth={1} />,
-    link: '/science',
-  },
+
   {
     title: 'Entertainment',
     icon: <Film size={32} strokeWidth={1} />,

@@ -1,5 +1,4 @@
-import { Link } from 'react-router';
-import BtnLink from '../components/UI/BtnLink';
+import BtnLink from '../../components/UI/BtnLink';
 
 const Page404 = () => {
   return (
