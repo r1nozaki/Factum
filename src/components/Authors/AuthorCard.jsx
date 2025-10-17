@@ -1,25 +1,28 @@
 import { Link } from 'react-router';
 
-const AuthorCard = ({ ava, name, position }) => {
+const AuthorCard = ({ id, ava, name, position }) => {
   return (
-    <div className='relative w-full flex flex-col items-center'>
-      <div className='w-11 h-11 rounded-full mb-3 overflow-hidden'>
+    <div className='relative flex flex-col items-center w-full'>
+      <div className='mb-3 overflow-hidden rounded-full w-11 h-11'>
         <div className='w-full bg-gray-200'>
-          <Link to='' className='w-full h-full object-cover object-center '>
+          <Link
+            to={`/authors/${id}`}
+            className='object-cover object-center w-full h-full '
+          >
             <img
               src={ava}
               alt={name}
               loading='lazy'
-              className=' w-full h-full object-cover object-center will-change-transform transition-all duration-300 hover:scale-110 hover:brightness-90'
+              className='object-cover object-center w-full h-full transition-all duration-300 will-change-transform hover:scale-110 hover:brightness-90'
             />
           </Link>
         </div>
       </div>
       <div className='w-full text-center'>
-        <p className='text-red-400 line-clamp-1 hover:underline text-base md:text-lg'>
-          <Link to=''>{name}</Link>
+        <p className='text-base text-red-400 line-clamp-1 hover:underline md:text-lg'>
+          <Link to={`/authors/${id}`}>{name}</Link>
         </p>
-        <p className='line-clamp-1 text-sm'>{position}</p>
+        <p className='text-sm line-clamp-1'>{position}</p>
       </div>
     </div>
   );

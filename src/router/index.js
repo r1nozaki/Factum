@@ -6,6 +6,7 @@ import Technology from '../pages/CategoriesNews/Technology';
 import Business from '../pages/CategoriesNews/Business';
 import Health from '../pages/CategoriesNews/Health';
 import Entertainment from '../pages/CategoriesNews/Entertainment';
+import AboutAuthor from '../pages/AboutAuthor/AboutAuthor';
 import Page404 from '../pages/404Page/404';
 
 export const routes = [
@@ -18,5 +19,6 @@ export const routes = [
   { path: '/about', component: AboutUs },
   { path: '/contact', component: Page404 },
   { path: '/authors', component: Authors },
+  { path: '/authors/:id', component: AboutAuthor },
   { path: '*', component: Page404 },
 ];

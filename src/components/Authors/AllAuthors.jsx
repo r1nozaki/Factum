@@ -49,8 +49,14 @@ const TopAuthors = () => {
         <AuthorsSearch query={query} setQuery={setQuery} />
       </div>
       <div className='grid w-full grid-cols-2 gap-5 mb-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 sm:gap-6 xl:gap-8 md:mb-10 lg:mb-12'>
-        {authorsToRender.map(({ ava, name, position }) => (
-          <AuthorCard key={name} ava={ava} name={name} position={position} />
+        {authorsToRender.map(({ id, ava, name, position }) => (
+          <AuthorCard
+            key={id}
+            id={id}
+            ava={ava}
+            name={name}
+            position={position}
+          />
         ))}
       </div>
       {!query && (
