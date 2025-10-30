@@ -1,43 +1,61 @@
 import axios from 'axios';
 
-const API_KEY = '0d03075f54ae00c04f0d140f163ffaf6';
-const BASE_URL = 'https://gnews.io/api/v4';
+const API_KEY = '6c8287be632cf92b50f9cbd3b41c6bcf';
+const BASE_URL = 'http://api.mediastack.com/v1/news';
 
 const api = axios.create({
   baseURL: BASE_URL,
   params: {
-    token: API_KEY,
-    lang: 'en',
-    country: 'us',
+    access_key: API_KEY,
+    languages: 'en',
+    countries: 'us',
   },
 });
 
 const getTopOneNews = async () => {
   try {
-    const response = await api.get('/top-headlines', {
-      params: { max: 1 },
-    });
-    return response.data.articles[0];
+    const response = await api.get('', { params: { limit: 1 } });
+    return response.data.data[0] || null;
   } catch (error) {
-    console.error('Error receiving top nzews:', error);
+    console.error('Error fetching top news:', error);
     return null;
   }
 };
 
-const getNewsByCategory = async (category, limit = 10, page = 1) => {
+const getNewsByCategory = async (category, limit = 10) => {
   try {
-    const response = await api.get('/top-headlines', {
+    const response = await api.get('', {
       params: {
-        topic: category,
-        max: limit,
-        page,
+        categories: category,
+        limit,
       },
     });
-    return response.data.articles;
+
+    const news = response.data.data || [];
+    return news.slice(0, limit);
   } catch (error) {
-    console.error(`Error receiving ${category} news:`, error);
+    console.error(`Error fetching ${category} news:`, error);
     return [];
   }
 };
 
-export { getTopOneNews, getNewsByCategory };
+const getNewsByTitle = async title => {
+  try {
+    const response = await api.get('', {
+      params: {
+        limit: 50,
+        keywords: title,
+      },
+    });
+
+    const news = response.data.data || [];
+
+    const foundNews = news.find(item => item.title === title);
+    return foundNews || null;
+  } catch (error) {
+    console.error(`Error fetching news by title (${title}):`, error);
+    return null;
+  }
+};
+
+export { getTopOneNews, getNewsByCategory, getNewsByTitle };

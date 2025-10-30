@@ -25,12 +25,6 @@ const AboutBanner = () => {
           </div>
         </div>
       </div>
-      <Link
-        to='/authors'
-        className='transition-colors duration-300 hover:text-red-500 hover:underline'
-      >
-        Back to all authors
-      </Link>
     </section>
   );
 };

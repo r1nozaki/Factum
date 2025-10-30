@@ -1,27 +1,22 @@
-import Layout from './components/Layout';
-import { routes } from './router/index';
-import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import { Outlet } from 'react-router';
+
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <>
-      <Router>
-        <Layout>
-          <Routes>
-            {routes.map(route => (
-              <Route
-                key={route.path}
-                element={<route.component />}
-                path={route.path}
-              />
-            ))}
-          </Routes>
-        </Layout>
-      </Router>
+      {<Header />}
+      {
+        <main className='pt-20 relative  w-full max-w-screen-2xl px-4 sm:px-5 min-h-screen'>
+          <Outlet />
+        </main>
+      }
+      {<Footer />}
     </>
   );
-}
+};
 
 export default App;
