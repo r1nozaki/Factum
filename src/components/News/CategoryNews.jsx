@@ -7,28 +7,26 @@ import CategoryList from '../Category/CategoryList';
 import AboutBanner from '../About/AboutBanner';
 import { PropagateLoader } from 'react-spinners';
 
-const HealthNews = () => {
-  const [healtNews, setHealthsNews] = useState(null);
+const CategoryNews = ({ category, title, totalCount = 20 }) => {
+  const [news, setNews] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const { page, totalPages, nextPage, prevPage, setPage } = usePagination({
-    totalCount: 10,
+    totalCount,
     limit: 10,
   });
 
   useEffect(() => {
     setLoading(true);
 
-    getNewsByCategory('health', 10, page)
+    getNewsByCategory(category, 10, page)
       .then(data => {
-        setHealthsNews(data);
+        setNews(data);
       })
-      .catch(() => {
-        setError(true);
-      })
+      .catch(() => setError(true))
       .finally(() => setLoading(false));
-  }, [page]);
+  }, [page, category]);
 
   if (error) {
     return (
@@ -46,7 +44,7 @@ const HealthNews = () => {
     );
   }
 
-  if (!healtNews) {
+  if (!news) {
     return null;
   }
 
@@ -55,23 +53,19 @@ const HealthNews = () => {
       <section className='relative w-full mt-8 mb-10 sm:mb-12 lg:mb-20 xl:mb-24 sm:mt-0'>
         <div className='w-full pb-2 mb-6 border-b-2 border-black sm:pb-3 md:pb-4 lg:pb-5 sm:mb-8 lg:mb-10'>
           <h1 className='w-full font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-6xl lg:leading-[3.5rem] xl:leading-[4.25rem] mt-10'>
-            Health News
+            {title}
           </h1>
         </div>
         <div className='w-full lg:flex lg:items-start lg:justify-between'>
           <div className='relative w-full lg:w-[67%] xl:w-[70%] mb-10 sm:mb-12 lg:mb-0'>
             <div className='grid w-full gap-5 mb-8 sm:grid-cols-2 lg:gap-6 md:mb-10 lg:mb-12'>
-              {healtNews.map(news => (
+              {news.map(item => (
                 <NewsCard
-                  key={news.title}
-                  src={news.image || 'News preview'}
-                  publishedDate={
-                    news.published_at
-                      ? news.published_at.slice(0, 10)
-                      : 'Unknown date'
-                  }
-                  description={news.description || 'No description'}
-                  title={news.title || ''}
+                  key={item.id}
+                  src={item.image || 'News preview'}
+                  publishedDate={item.publishedDate || 'Unknown date'}
+                  description={item.description || 'No description'}
+                  title={item.title || ''}
                 />
               ))}
             </div>
@@ -97,4 +91,4 @@ const HealthNews = () => {
   );
 };
 
-export default HealthNews;
+export default CategoryNews;

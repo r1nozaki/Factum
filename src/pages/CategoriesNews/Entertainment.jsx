@@ -1,7 +1,13 @@
-import EntertainmentNews from '../../components/News/EntertainmentNews';
+import CategoryNews from '../../components/News/CategoryNews';
 
 const Entertainment = () => {
-  return <EntertainmentNews />;
+  return (
+    <CategoryNews
+      category='entertainment'
+      title='Entertainment News'
+      totalCount={20}
+    />
+  );
 };
 
 export default Entertainment;

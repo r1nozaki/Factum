@@ -1,7 +1,7 @@
-import HealthNews from '../../components/News/HealthNews';
+import CategoryNews from '../../components/News/CategoryNews';
 
 const Health = () => {
-  return <HealthNews />;
+  return <CategoryNews category='health' title='Health News' totalCount={10} />;
 };
 
 export default Health;

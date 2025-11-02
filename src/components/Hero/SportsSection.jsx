@@ -11,7 +11,7 @@ const SportsSection = () => {
   useEffect(() => {
     setLoading(true);
 
-    getNewsByCategory('sports', 8)
+    getNewsByCategory('sport', 8)
       .then(data => setNewsCategory(data))
       .catch(() => setError(true))
       .finally(() => setLoading(false));

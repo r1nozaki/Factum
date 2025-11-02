@@ -1,7 +1,9 @@
-import BusinessNews from '../../components/News/BusinessNews';
+import CategoryNews from '../../components/News/CategoryNews';
 
 const Business = () => {
-  return <BusinessNews />;
+  return (
+    <CategoryNews category='business' title='Business News' totalCount={20} />
+  );
 };
 
 export default Business;

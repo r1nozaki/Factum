@@ -1,6 +1,7 @@
-import SportsNews from '../../components/News/SportsNews';
+import CategoryNews from '../../components/News/CategoryNews';
+
 const Sports = () => {
-  return <SportsNews />;
+  return <CategoryNews category='sport' title='Sports News' totalCount={20} />;
 };
 
 export default Sports;
