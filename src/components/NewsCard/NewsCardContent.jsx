@@ -1,16 +1,13 @@
 import { Link } from 'react-router';
 import BtnDate from '../UI/BtnDate';
 
-const NewsCardContent = ({ publishedDate, description, title }) => {
+const NewsCardContent = ({ publishedDate, description, id }) => {
   return (
     <div className='w-full'>
       <div className='w-full mb-4 sm:mb-5'>
         <BtnDate>{publishedDate}</BtnDate>
         <p className='text-base font-medium sm:line-clamp-2'>
-          <Link
-            to={`/news/${encodeURIComponent(title)}`}
-            className='block-link group-hover:underline'
-          >
+          <Link to={`/news/${id}`} className='block-link group-hover:underline'>
             {description}
           </Link>
         </p>

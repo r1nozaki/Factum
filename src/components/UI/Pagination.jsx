@@ -1,15 +1,31 @@
-import { pagesArray } from '../../utils/pages';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { pagesArray } from '../../utils/pages';
+import { lenis } from '../../lenisInstance';
 
 const Pagination = ({ page, totalPages, setPage, nextPage, prevPage }) => {
   if (totalPages <= 1) return null;
 
   const pages = pagesArray(totalPages);
 
+  const handleChangePage = p => {
+    setPage(p);
+    lenis.scrollTo(0);
+  };
+
+  const handleNext = () => {
+    nextPage();
+    lenis.scrollTo(0);
+  };
+
+  const handlePrev = () => {
+    prevPage();
+    lenis.scrollTo(0);
+  };
+
   return (
-    <div className='flex justify-center items-center gap-2'>
+    <div className='flex justify-center items-center gap-2 mt-8'>
       <button
-        onClick={prevPage}
+        onClick={handlePrev}
         disabled={page === 1}
         className='px-3 py-1 border rounded disabled:opacity-50 transition-colors duration-300 hover:bg-gray-100 hover:cursor-pointer'
       >
@@ -19,7 +35,7 @@ const Pagination = ({ page, totalPages, setPage, nextPage, prevPage }) => {
       {pages.map(p => (
         <button
           key={p}
-          onClick={() => setPage(p)}
+          onClick={() => handleChangePage(p)}
           className={`px-3 py-1 border border-gray-300 rounded text-black transition-colors duration-300 hover:text-white hover:cursor-pointer hover:bg-red-500 ${
             p === page ? 'bg-red-500 text-white border-none' : ''
           }`}
@@ -29,7 +45,7 @@ const Pagination = ({ page, totalPages, setPage, nextPage, prevPage }) => {
       ))}
 
       <button
-        onClick={nextPage}
+        onClick={handleNext}
         disabled={page === totalPages}
         className='px-3 py-1 border rounded disabled:opacity-50 transition-colors duration-300 hover:bg-gray-100 hover:cursor-pointer'
       >

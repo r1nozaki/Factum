@@ -62,6 +62,7 @@ const CategoryNews = ({ category, title, totalCount = 20 }) => {
               {news.map(item => (
                 <NewsCard
                   key={item.id}
+                  id={item.id}
                   src={item.image || 'News preview'}
                   publishedDate={item.publishedDate || 'Unknown date'}
                   description={item.description || 'No description'}

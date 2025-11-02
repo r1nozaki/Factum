@@ -11,7 +11,7 @@ const SportsSection = () => {
   useEffect(() => {
     setLoading(true);
 
-    getNewsByCategory('sport', 8)
+    getNewsByCategory('sports', 8)
       .then(data => setNewsCategory(data))
       .catch(() => setError(true))
       .finally(() => setLoading(false));
@@ -52,10 +52,11 @@ const SportsSection = () => {
         {newsCategory.map(newsCard => (
           <NewsCard
             key={newsCard.title}
+            id={newsCard.id}
             src={newsCard.image || 'News preview'}
             publishedDate={
-              newsCard.published_at
-                ? newsCard.published_at.slice(0, 10)
+              newsCard.publishedDate
+                ? newsCard.publishedDate.slice(0, 10)
                 : 'Unknown date'
             }
             description={newsCard.description || 'No description'}

@@ -1,6 +1,15 @@
-const NewsCardImage = ({ src, alt }) => {
+import { useNavigate } from 'react-router';
+
+const NewsCardImage = ({ src, alt, id }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className='relative block w-full h-0 pb-[65%] rounded-lg overflow-hidden border border-gray bg-gray-200 mb-4'>
+    <div
+      className='relative block w-full h-0 pb-[65%] rounded-lg overflow-hidden border border-gray bg-gray-200 mb-4'
+      onClick={() => {
+        navigate(`/news/${id}`);
+      }}
+    >
       <img
         src={src}
         alt={alt}

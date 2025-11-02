@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://68fe05987c700772bb128ef7.mockapi.io/api/v1/news';
+const BASE_URL = 'https://68fe05987c700772bb128ef7.mockapi.io/api/v1';
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -8,7 +8,7 @@ const api = axios.create({
 
 export const getTopOneNews = async () => {
   try {
-    const response = await api.get('');
+    const response = await api.get('/news');
     return response.data[0] || null;
   } catch (error) {
     console.error('Error fetching top news:', error);
@@ -18,14 +18,9 @@ export const getTopOneNews = async () => {
 
 export const getNewsByCategory = async (category, limit = 10, page = 1) => {
   try {
-    const response = await api.get('', {
-      params: {
-        category,
-        page,
-        limit,
-      },
+    const response = await api.get('/news', {
+      params: { category, page, limit },
     });
-
     return response.data || [];
   } catch (error) {
     console.error(`Error fetching ${category} news:`, error);
@@ -35,7 +30,7 @@ export const getNewsByCategory = async (category, limit = 10, page = 1) => {
 
 export const getNewsById = async id => {
   try {
-    const response = await api.get(`/${id}`);
+    const response = await api.get(`/news/${id}`);
     return response.data || null;
   } catch (error) {
     console.error(`Error fetching news by id (${id}):`, error);

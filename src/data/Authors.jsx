@@ -35,7 +35,7 @@ const allAuthors = [
     position: 'UI Designer',
     ava: GirlAva6,
     email: 'tatjana.orechova@email.com',
-    location: 'Prague, Czechia',
+    location: 'Kyiv, Ukraine',
     published: 18,
   },
   {

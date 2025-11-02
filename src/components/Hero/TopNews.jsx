@@ -53,7 +53,9 @@ const TopNews = () => {
         <p className='sm:line-clamp-5 mb-4 md:mb-5 text-base'>
           {topNews.description}
         </p>
-        <BtnLink className='bg-red-500 text-white'>More</BtnLink>
+        <BtnLink className='bg-red-500 text-white' link={`/news/${topNews.id}`}>
+          More
+        </BtnLink>
       </div>
       <div className='relative w-full h-0 pb-[65%] sm:pb-[60%] lg:pb-[35%] rounded-md overflow-hidden bg-gray'>
         <img
