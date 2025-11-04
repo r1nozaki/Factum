@@ -1,6 +1,7 @@
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import Logo from '../Logo';
+import { lenis } from '../../lenisInstance';
 import { Link } from 'react-router';
 import Socials from '../Socials';
 import HeaderNavigation from './HeaderNavigation';
@@ -18,7 +19,7 @@ const HeaderMenu = ({ menu, setOpenMenu }) => {
 
   const handleMenu = () => setOpenMenu(!menu);
 
-  useBlockScroll(menu);
+  useBlockScroll(menu, lenis);
 
   return (
     <>

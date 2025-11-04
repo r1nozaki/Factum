@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from 'motion/react';
 import useBlockScroll from '../../hooks/useBlockScroll';
+import { lenis } from '../../lenisInstance';
 import Btn from '../UI/Btn';
 import { X, Mail, MailPlus } from 'lucide-react';
 import Label from '../UI/Label';
 
 const HeaderSubscribe = ({ subscribe, setOpenSubscribe }) => {
-  useBlockScroll(subscribe);
+  useBlockScroll(subscribe, lenis);
 
   const handleSubscribe = () => {
     setOpenSubscribe(!subscribe);

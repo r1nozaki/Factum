@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { Search } from 'lucide-react';
+import { lenis } from '../../lenisInstance';
 import Label from '../UI/Label';
 import BtnLink from '../UI/BtnLink';
 import useBlockScroll from '../../hooks/useBlockScroll';
@@ -9,7 +10,7 @@ const HeaderSearch = ({ search, setOpenSearch, query, setQuery }) => {
     setOpenSearch(!search);
   };
 
-  useBlockScroll(search);
+  useBlockScroll(search, lenis);
 
   return (
     <>

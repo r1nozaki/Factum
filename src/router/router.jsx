@@ -30,6 +30,7 @@ const EntertainmentNewsPage = lazy(() =>
   import('../pages/CategoriesNews/Entertainment'),
 );
 const NewsByIdPage = lazy(() => import('../pages/NewsDetails/AboutNews'));
+const ContactPage = lazy(() => import('../pages/ContactUs/ContactUs'));
 const NotFoundPage = lazy(() => import('../pages/404Page/404'));
 
 export const router = createBrowserRouter([
@@ -46,6 +47,7 @@ export const router = createBrowserRouter([
       { path: ROUTER_PATHS.HEALTH, element: <HealthNewsPage /> },
       { path: ROUTER_PATHS.ENTERTAINMENT, element: <EntertainmentNewsPage /> },
       { path: ROUTER_PATHS.NEWS, element: <NewsByIdPage /> },
+      { path: ROUTER_PATHS.CONTACT, element: <ContactPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
