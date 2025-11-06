@@ -37,3 +37,18 @@ export const getNewsById = async id => {
     return null;
   }
 };
+
+export const getNewsByPublishedDate = async publishedDate => {
+  try {
+    const response = await api.get('/news', {
+      params: { publishedDate },
+    });
+    return response.data || [];
+  } catch (error) {
+    console.error(
+      `Error fetching news by published date (${publishedDate}):`,
+      error,
+    );
+    return [];
+  }
+};

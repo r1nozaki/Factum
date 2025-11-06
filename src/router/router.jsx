@@ -6,6 +6,7 @@ export const ROUTER_PATHS = {
   ABOUTUS: '/about',
   AUTHORS: '/authors',
   AUTHOR: '/authors/:id',
+  NEWS_DATE: '/news/date/:publishedDate',
   NEWS: '/news/:id',
   CONTACT: '/contact',
   SPORTS: '/sports',
@@ -31,6 +32,7 @@ const EntertainmentNewsPage = lazy(() =>
 );
 const NewsByIdPage = lazy(() => import('../pages/NewsDetails/AboutNews'));
 const ContactPage = lazy(() => import('../pages/ContactUs/ContactUs'));
+const NewsByDatePage = lazy(() => import('../pages/NewsByDate/NewsByDate'));
 const NotFoundPage = lazy(() => import('../pages/404Page/404'));
 
 export const router = createBrowserRouter([
@@ -48,6 +50,7 @@ export const router = createBrowserRouter([
       { path: ROUTER_PATHS.ENTERTAINMENT, element: <EntertainmentNewsPage /> },
       { path: ROUTER_PATHS.NEWS, element: <NewsByIdPage /> },
       { path: ROUTER_PATHS.CONTACT, element: <ContactPage /> },
+      { path: ROUTER_PATHS.NEWS_DATE, element: <NewsByDatePage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
