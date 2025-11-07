@@ -52,3 +52,23 @@ export const getNewsByPublishedDate = async publishedDate => {
     return [];
   }
 };
+
+export const getNewsByTitle = async (query, limit = 10, page = 1) => {
+  try {
+    const response = await api.get('/news');
+    const filtered = response.data.filter(news =>
+      news.title.toLowerCase().includes(query.toLowerCase()),
+    );
+
+    const start = (page - 1) * limit;
+    const paginated = filtered.slice(start, start + limit);
+
+    return {
+      data: paginated,
+      total: filtered.length,
+    };
+  } catch (error) {
+    console.error(`Error filtering news by title (${query}):`, error);
+    return { data: [], total: 0 };
+  }
+};

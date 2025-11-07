@@ -14,6 +14,7 @@ export const ROUTER_PATHS = {
   BUSINESS: '/business',
   HEALTH: '/health',
   ENTERTAINMENT: '/entertainment',
+  SEARCH: '/search',
 };
 
 const AppLayout = lazy(() => import('../App'));
@@ -33,6 +34,9 @@ const EntertainmentNewsPage = lazy(() =>
 const NewsByIdPage = lazy(() => import('../pages/NewsDetails/AboutNews'));
 const ContactPage = lazy(() => import('../pages/ContactUs/ContactUs'));
 const NewsByDatePage = lazy(() => import('../pages/NewsByDate/NewsByDate'));
+const SearchedNewsPage = lazy(() =>
+  import('../pages/SearchedNewsPage/SearchedNewsPage'),
+);
 const NotFoundPage = lazy(() => import('../pages/404Page/404'));
 
 export const router = createBrowserRouter([
@@ -51,6 +55,7 @@ export const router = createBrowserRouter([
       { path: ROUTER_PATHS.NEWS, element: <NewsByIdPage /> },
       { path: ROUTER_PATHS.CONTACT, element: <ContactPage /> },
       { path: ROUTER_PATHS.NEWS_DATE, element: <NewsByDatePage /> },
+      { path: ROUTER_PATHS.SEARCH, element: <SearchedNewsPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

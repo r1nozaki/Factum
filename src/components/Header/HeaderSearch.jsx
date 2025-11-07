@@ -5,7 +5,7 @@ import Label from '../UI/Label';
 import BtnLink from '../UI/BtnLink';
 import useBlockScroll from '../../hooks/useBlockScroll';
 
-const HeaderSearch = ({ search, setOpenSearch, query, setQuery }) => {
+const HeaderSearch = ({ search, setOpenSearch, query, setQuery, onSearch }) => {
   const handleSearch = () => {
     setOpenSearch(!search);
   };
@@ -17,7 +17,7 @@ const HeaderSearch = ({ search, setOpenSearch, query, setQuery }) => {
       {!search && (
         <button
           onClick={handleSearch}
-          className='hover:text-red-500 transition-colors duration-300 hover:cursor-pointer'
+          className='transition-colors duration-300 hover:text-red-500 hover:cursor-pointer'
         >
           <Search size={28} strokeWidth={1} />
         </button>
@@ -38,21 +38,22 @@ const HeaderSearch = ({ search, setOpenSearch, query, setQuery }) => {
               animate={{ y: 0 }}
               exit={{ y: '-100%' }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className='fixed z-10 top-0 right-0 w-full h-32 sm:h-16 lg:h-20 bg-white shadow-lg'
+              className='fixed top-0 right-0 z-10 w-full h-32 bg-white shadow-lg sm:h-16 lg:h-20'
             >
-              <div className='flex items-center justify-between w-full max-w-screen-2xl p-4 sm:p-5'>
-                <form className='flex gap-3 flex-wrap sm:flex-nowrap sm:gap-4 w-full'>
+              <div className='flex items-center justify-between w-full p-4 max-w-screen-2xl sm:p-5'>
+                <form className='flex flex-wrap w-full gap-3 sm:flex-nowrap sm:gap-4'>
                   <Label className='flex items-center'>
-                    <Search className='absolute z-10 left-2 w-5 lg:w-6 h-5 lg:h-6 text-black/50' />
+                    <Search className='absolute z-10 w-5 h-5 left-2 lg:w-6 lg:h-6 text-black/50' />
                     <input
                       type='text'
                       onChange={e => setQuery(e.target.value)}
                       value={query}
-                      className='border border-gray-200 px-5 w-full h-10 lg:h-11 rounded outline-none focus:border-black transition-all duration-300 pl-9 lg:pl-10 text-base'
+                      className='w-full h-10 px-5 text-base transition-all duration-300 border border-gray-200 rounded outline-none lg:h-11 focus:border-black pl-9 lg:pl-10'
                       placeholder='Search on Factum'
                     />
                   </Label>
                   <BtnLink
+                    onClick={onSearch}
                     className={` text-white ${
                       query === '' ? 'bg-gray-200' : 'bg-red-500 '
                     }`}

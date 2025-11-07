@@ -14,9 +14,8 @@ const schema = yup.object().shape({
     .email('Please enter a valid email address'),
 });
 
-const SubscribeForm = ({}) => {
+const SubscribeForm = ({ setError, setSuccess }) => {
   const [isSending, setIsSending] = useState(false);
-  const [error, setError] = useState(false);
 
   const {
     register,
@@ -39,8 +38,9 @@ const SubscribeForm = ({}) => {
         'dY6zhES0umbcp97PU',
       )
       .then(() => {
+        setSuccess(true);
         setTimeout(() => {
-          setIsSending(false);
+          setSuccess(false);
         }, 3000);
         reset();
       })
@@ -61,18 +61,18 @@ const SubscribeForm = ({}) => {
     >
       <Label className='w-full'>
         <div className='flex items-center w-full mb-2'>
-          <Mail className='absolute z-10 left-2 w-5 lg:w-6 h-5 lg:h-6 stroke-1 text-black/50' />
+          <Mail className='absolute z-10 w-5 h-5 stroke-1 left-2 lg:w-6 lg:h-6 text-black/50' />
           <input
             {...register('email')}
             placeholder='Enter your email'
-            className='relative w-full h-10 lg:h-11 text-base px-5 rounded outline-none border border-gray-200 bg-white focus:border-black transition-all duration-300 pl-9 lg:pl-10'
+            className='relative w-full h-10 px-5 text-base transition-all duration-300 bg-white border border-gray-200 rounded outline-none lg:h-11 focus:border-black pl-9 lg:pl-10'
           />
         </div>
         {errors.email && (
-          <div className='text-white text-sm'>{errors.email.message}</div>
+          <div className='text-sm text-white'>{errors.email.message}</div>
         )}
       </Label>
-      <Btn type='submit' disabled={isSending} className='bg-black text-white'>
+      <Btn type='submit' disabled={isSending} className='text-white bg-black'>
         {isSending ? (
           <ArchiveRestore />
         ) : (
