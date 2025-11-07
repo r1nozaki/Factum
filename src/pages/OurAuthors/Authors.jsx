@@ -1,4 +1,4 @@
-import Banner from '../../components/Banner';
+import Banner from '../../components/UI/Banner';
 import AllAUthors from '../../components/Authors/AllAuthors';
 import Category from '../../components/Category/Category';
 import Subscribe from '../../components/Subscribe/Subscribe';
