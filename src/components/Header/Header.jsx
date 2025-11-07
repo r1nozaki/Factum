@@ -3,7 +3,7 @@ import HeaderNavigation from './HeaderNavigation';
 import HeaderMenu from './HeaderMenu';
 import HeaderSearch from './HeaderSearch';
 import HeaderSubscribe from './HeaderSubscribe';
-import Logo from '../Logo';
+import Logo from '../../components/common/Logo';
 
 const Header = () => {
   const [menu, setOpenMenu] = useState(false);

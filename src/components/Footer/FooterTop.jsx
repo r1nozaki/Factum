@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
-import Logo from '../Logo';
-import Socials from '../Socials';
+import Logo from '../../components/common/Logo';
+import Socials from '../../components/common/Socials';
 
 const FooterTop = () => {
   const categoriesLink = [

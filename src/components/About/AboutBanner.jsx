@@ -1,5 +1,5 @@
 import BtnLink from '../UI/BtnLink';
-import Socials from '../Socials';
+import Socials from '../../components/common/Socials';
 
 const AboutBanner = () => {
   return (

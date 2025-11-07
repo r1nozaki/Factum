@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { getNewsByPublishedDate } from '../../services/NewsServices';
 import NewsCard from '../NewsCard/NewsCard';
-import Banner from '../Banner';
+import Banner from '../UI/Banner';
 import { PropagateLoader } from 'react-spinners';
 
 const NewsByPublishedDate = () => {

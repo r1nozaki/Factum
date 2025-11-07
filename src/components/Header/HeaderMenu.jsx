@@ -1,9 +1,9 @@
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
-import Logo from '../Logo';
+import Logo from '../../components/common/Logo';
 import { lenis } from '../../lenisInstance';
 import { Link } from 'react-router';
-import Socials from '../Socials';
+import Socials from '../../components/common/Socials';
 import HeaderNavigation from './HeaderNavigation';
 import useIsDesktop from '../../hooks/useIsDesktop';
 import useBlockScroll from '../../hooks/useBlockScroll';
