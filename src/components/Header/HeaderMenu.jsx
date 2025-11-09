@@ -74,7 +74,7 @@ const HeaderMenu = ({ menu, setOpenMenu, subscribe, setOpenSubscribe }) => {
               </div>
 
               <ul className='flex flex-col items-center justify-center flex-grow w-full p-6 sm:block lg:p-10'>
-                {desktop ? null : <HeaderNavigation />}
+                {desktop ? null : <HeaderNavigation onClick={handleMenu} />}
                 {menuLink.map(({ path, label }) => (
                   <li key={label} className='mb-6 sm:w-full lg:mb-8 last:mb-0'>
                     <Link

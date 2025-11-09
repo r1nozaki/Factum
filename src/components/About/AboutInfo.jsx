@@ -1,10 +1,10 @@
 const AboutInfo = ({ side, img, title, content, className = '' }) => {
   return (
-    <section className='relative w-full grid grid-cols-2 items-center gap-5 md:gap-8 lg:gap-10 mb-10 sm:mb-12 lg:mb-20 xl:mb-24'>
+    <section className='relative grid items-center w-full grid-cols-1 gap-5 mb-10 md:grid-cols-2 md:gap-8 lg:gap-10 sm:mb-12 lg:mb-20 xl:mb-24'>
       {side === 'left' ? (
         <>
           <div className='w-full col-start-1'>
-            <h2 className='w-full font-semibold text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-3 lg:mb-4'>
+            <h2 className='w-full mb-2 text-2xl font-semibold sm:text-3xl lg:text-4xl sm:mb-3 lg:mb-4'>
               {title}
             </h2>
             <div className='grid gap-2.5 md:gap-3.5 w-full'>
@@ -17,7 +17,7 @@ const AboutInfo = ({ side, img, title, content, className = '' }) => {
             <img
               src={img}
               alt={img}
-              className='absolute top-0 right-0 w-full h-full object-cover object-center'
+              className='absolute top-0 right-0 object-cover object-center w-full h-full'
             />
           </div>
         </>
@@ -27,11 +27,11 @@ const AboutInfo = ({ side, img, title, content, className = '' }) => {
             <img
               src={img}
               alt={img}
-              className='absolute top-0 right-0 w-full h-full object-cover object-center'
+              className='absolute top-0 right-0 object-cover object-center w-full h-full'
             />
           </div>
           <div className='w-full '>
-            <h2 className='w-full font-semibold text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-3 lg:mb-4'>
+            <h2 className='w-full mb-2 text-2xl font-semibold sm:text-3xl lg:text-4xl sm:mb-3 lg:mb-4'>
               {title}
             </h2>
             <div className='grid gap-2.5 md:gap-3.5 w-full'>

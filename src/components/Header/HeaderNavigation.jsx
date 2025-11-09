@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router';
 
-const HeaderNavigation = () => {
+const HeaderNavigation = ({ ...props }) => {
   const navItems = [
     { path: '/sports', label: 'sports' },
     { path: '/technology', label: 'technology' },
@@ -11,7 +11,12 @@ const HeaderNavigation = () => {
   return (
     <>
       {navItems.map(({ path, label }) => (
-        <NavLink key={label} to={path} className='sm:w-full mb-6 lg:mb-0'>
+        <NavLink
+          key={label}
+          to={path}
+          {...props}
+          className='mb-6 sm:w-full lg:mb-0'
+        >
           {({ isActive }) => (
             <span
               className={`font-semibold text-sm lg:text-base uppercase ${
