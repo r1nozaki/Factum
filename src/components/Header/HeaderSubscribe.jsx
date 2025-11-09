@@ -18,7 +18,7 @@ const schema = yup.object().shape({
     .email('Please enter a valid email address'),
 });
 
-const HeaderSubscribe = ({ subscribe, setOpenSubscribe }) => {
+const HeaderSubscribe = ({ subscribe, setOpenSubscribe, dark }) => {
   useBlockScroll(subscribe, lenis);
 
   const [isSending, setIsSending] = useState(false);
@@ -68,7 +68,9 @@ const HeaderSubscribe = ({ subscribe, setOpenSubscribe }) => {
       {!subscribe && (
         <Btn
           onClick={handleSubscribe}
-          className='hidden text-black border lg:block hover:bg-black hover:text-white'
+          className={` border lg:block ${
+            dark ? 'text-white bg-black' : 'text-black '
+          } hover:bg-black hover:text-white`}
         >
           Subscribe
         </Btn>

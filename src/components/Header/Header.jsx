@@ -30,10 +30,12 @@ const Header = () => {
         </ul>
       </nav>
       <div className='flex items-center justify-end gap-6 lg:gap-4 xl:gap-8 lg:min-w-52 xl:min-w-60'>
-        <HeaderSubscribe
-          subscribe={subscribe}
-          setOpenSubscribe={setOpenSubscribe}
-        />
+        <div className='hidden md:block'>
+          <HeaderSubscribe
+            subscribe={subscribe}
+            setOpenSubscribe={setOpenSubscribe}
+          />
+        </div>
         <div className='flex items-center gap-3 lg:gap-4'>
           <HeaderSearch
             search={search}
@@ -43,7 +45,12 @@ const Header = () => {
             onSearch={Search}
           />
           <span className='w-[1px] h-8 bg-gray-200'></span>
-          <HeaderMenu menu={menu} setOpenMenu={setOpenMenu} />
+          <HeaderMenu
+            menu={menu}
+            setOpenMenu={setOpenMenu}
+            subscribe={subscribe}
+            setOpenSubscribe={setOpenSubscribe}
+          />
         </div>
       </div>
     </header>
