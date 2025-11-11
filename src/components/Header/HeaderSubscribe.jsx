@@ -1,13 +1,13 @@
+import emailjs from '@emailjs/browser';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { ArchiveRestore, Mail, MailPlus, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import emailjs from '@emailjs/browser';
 import useBlockScroll from '../../hooks/useBlockScroll';
 import { lenis } from '../../lenisInstance';
 import Btn from '../UI/Btn';
-import { X, Mail, MailPlus, ArchiveRestore } from 'lucide-react';
 import Label from '../UI/Label';
 import Notification from '../common/Notification';
 

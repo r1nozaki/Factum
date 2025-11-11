@@ -2,7 +2,11 @@ import CategoryNews from '../../components/News/CategoryNews';
 
 const Business = () => {
   return (
-    <CategoryNews category='business' title='Business News' totalCount={20} />
+    <>
+      <title>Business News</title>
+      <meta name='content' description='Business News' />
+      <CategoryNews category='business' title='Business News' totalCount={20} />
+    </>
   );
 };
 

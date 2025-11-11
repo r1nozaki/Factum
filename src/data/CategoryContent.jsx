@@ -1,4 +1,4 @@
-import { Trophy, Cpu, BriefcaseBusiness, Hospital, Film } from 'lucide-react';
+import { BriefcaseBusiness, Cpu, Film, Hospital, Trophy } from 'lucide-react';
 
 const categoryContent = [
   {

@@ -1,6 +1,6 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { pagesArray } from '../../utils/pages';
 import { lenis } from '../../lenisInstance';
+import { pagesArray } from '../../utils/pages';
 
 const Pagination = ({ page, totalPages, setPage, nextPage, prevPage }) => {
   if (totalPages <= 1) return null;
@@ -23,11 +23,11 @@ const Pagination = ({ page, totalPages, setPage, nextPage, prevPage }) => {
   };
 
   return (
-    <div className='flex justify-center items-center gap-2 mt-8'>
+    <div className='flex items-center justify-center gap-2 mt-8'>
       <button
         onClick={handlePrev}
         disabled={page === 1}
-        className='px-3 py-1 border rounded disabled:opacity-50 transition-colors duration-300 hover:bg-gray-100 hover:cursor-pointer'
+        className='px-3 py-1 transition-colors duration-300 border rounded disabled:opacity-50 hover:bg-gray-100 hover:cursor-pointer'
       >
         <ArrowLeft />
       </button>
@@ -47,7 +47,7 @@ const Pagination = ({ page, totalPages, setPage, nextPage, prevPage }) => {
       <button
         onClick={handleNext}
         disabled={page === totalPages}
-        className='px-3 py-1 border rounded disabled:opacity-50 transition-colors duration-300 hover:bg-gray-100 hover:cursor-pointer'
+        className='px-3 py-1 transition-colors duration-300 border rounded disabled:opacity-50 hover:bg-gray-100 hover:cursor-pointer'
       >
         <ArrowRight />
       </button>

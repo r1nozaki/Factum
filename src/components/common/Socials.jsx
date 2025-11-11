@@ -29,7 +29,7 @@ const Socials = ({ dark }) => {
     },
   ];
   return (
-    <div className='flex items-center justify-center lg:justify-start gap-4 w-full'>
+    <div className='flex items-center justify-center w-full gap-4 lg:justify-start'>
       {SocialsIcon.map(social => (
         <a
           key={social.alt}

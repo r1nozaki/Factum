@@ -2,11 +2,15 @@ import CategoryNews from '../../components/News/CategoryNews';
 
 const Technology = () => {
   return (
-    <CategoryNews
-      category='technology'
-      title='Technology News'
-      totalCount={10}
-    />
+    <>
+      <title>Technology News</title>
+      <meta name='content' description='Technology News' />
+      <CategoryNews
+        category='technology'
+        title='Technology News'
+        totalCount={10}
+      />
+    </>
   );
 };
 

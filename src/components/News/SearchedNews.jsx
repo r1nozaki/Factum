@@ -1,10 +1,10 @@
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
-import { useState, useEffect } from 'react';
-import { getNewsByTitle } from '../../services/NewsServices';
-import usePagination from '../../hooks/usePagination';
+import { PropagateLoader } from 'react-spinners';
 import NewsCard from '../../components/NewsCard/NewsCard';
 import Pagination from '../../components/UI/Pagination';
-import { PropagateLoader } from 'react-spinners';
+import usePagination from '../../hooks/usePagination';
+import { getNewsByTitle } from '../../services/NewsServices';
 import Banner from '../UI/Banner';
 
 const SearchedNews = () => {
@@ -38,40 +38,44 @@ const SearchedNews = () => {
   }, [query, page]);
 
   return (
-    <section className='relative w-full mt-8 mb-10 sm:mb-12 lg:mb-20 xl:mb-24 sm:mt-0'>
-      <Banner title={'Search'} description={`Title: ${query}`} />
+    <>
+      <title>{query}</title>
+      <meta name='content' description='News based on search results' />
+      <section className='relative w-full mt-8 mb-10 sm:mb-12 lg:mb-20 xl:mb-24 sm:mt-0'>
+        <Banner title={'Search'} description={`Title: ${query}`} />
 
-      {loading ? (
-        <div className='flex items-center justify-center h-20'>
-          <PropagateLoader />
-        </div>
-      ) : news.length === 0 ? (
-        <p>No news found for “{query}”.</p>
-      ) : (
-        <>
-          <div className='grid w-full gap-5 mb-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 md:mb-10 lg:mb-12'>
-            {news.map(item => (
-              <NewsCard
-                key={item.id}
-                id={item.id}
-                src={item.image || 'News preview'}
-                publishedDate={item.publishedDate || 'Unknown date'}
-                description={item.description || 'No description'}
-                title={item.title || ''}
-              />
-            ))}
+        {loading ? (
+          <div className='flex items-center justify-center h-20'>
+            <PropagateLoader />
           </div>
+        ) : news.length === 0 ? (
+          <p>No news found for “{query}”.</p>
+        ) : (
+          <>
+            <div className='grid w-full gap-5 mb-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 md:mb-10 lg:mb-12'>
+              {news.map(item => (
+                <NewsCard
+                  key={item.id}
+                  id={item.id}
+                  src={item.image || 'News preview'}
+                  publishedDate={item.publishedDate || 'Unknown date'}
+                  description={item.description || 'No description'}
+                  title={item.title || ''}
+                />
+              ))}
+            </div>
 
-          <Pagination
-            page={page}
-            totalPages={totalPages}
-            setPage={setPage}
-            nextPage={nextPage}
-            prevPage={prevPage}
-          />
-        </>
-      )}
-    </section>
+            <Pagination
+              page={page}
+              totalPages={totalPages}
+              setPage={setPage}
+              nextPage={nextPage}
+              prevPage={prevPage}
+            />
+          </>
+        )}
+      </section>
+    </>
   );
 };
 

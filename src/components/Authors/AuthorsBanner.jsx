@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router';
+import { Link, useParams } from 'react-router';
 import { allAuthors } from '../../data/Authors';
 const AuthorsBanner = () => {
   const { id } = useParams();
@@ -21,6 +21,8 @@ const AuthorsBanner = () => {
 
   return (
     <>
+      <title>{authorsById.name}</title>
+      <meta name='content' description='About news authors' />
       <section className='relative flex flex-col items-center justify-center w-full px-5 py-8 mt-10 mb-10 text-center bg-gray-200 rounded-md md:px-10 md:py-12 lg:py-16 sm:mb-12 lg:mb-20 xl:mb-24'>
         <div className='w-12 h-12 mb-3 overflow-hidden rounded-full'>
           <div className='w-full bg-gray-200'>

@@ -1,5 +1,5 @@
-import Label from '../UI/Label';
 import { Search } from 'lucide-react';
+import Label from '../UI/Label';
 
 const AuthorsSearch = ({ query, setQuery }) => {
   return (

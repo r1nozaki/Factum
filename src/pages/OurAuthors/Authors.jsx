@@ -1,10 +1,12 @@
-import Banner from '../../components/UI/Banner';
 import AllAUthors from '../../components/Authors/AllAuthors';
 import Category from '../../components/Category/Category';
 import Subscribe from '../../components/Subscribe/Subscribe';
+import Banner from '../../components/UI/Banner';
 const Authors = () => {
   return (
     <>
+      <title>Our Authors</title>
+      <meta name='content' description='All news authors' />
       <Banner
         title={'Our Authors'}
         description={

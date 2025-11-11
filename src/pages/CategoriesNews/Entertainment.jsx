@@ -2,11 +2,15 @@ import CategoryNews from '../../components/News/CategoryNews';
 
 const Entertainment = () => {
   return (
-    <CategoryNews
-      category='entertainment'
-      title='Entertainment News'
-      totalCount={20}
-    />
+    <>
+      <title>Entertainment News</title>
+      <meta name='content' description='Entertainment News' />
+      <CategoryNews
+        category='entertainment'
+        title='Entertainment News'
+        totalCount={20}
+      />
+    </>
   );
 };
 

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import AuthorCard from './AuthorCard';
-import AuthorsSearch from './AuthorsSearch';
-import Pagination from '../UI/Pagination';
-import usePagination from '../../hooks/usePagination';
 import { allAuthors } from '../../data/Authors';
 import useDebounce from '../../hooks/useDebounce';
+import usePagination from '../../hooks/usePagination';
+import Pagination from '../UI/Pagination';
+import AuthorCard from './AuthorCard';
+import AuthorsSearch from './AuthorsSearch';
 
 const TopAuthors = () => {
   const [searchResult, setSearchResult] = useState('');
@@ -25,7 +25,7 @@ const TopAuthors = () => {
     }
 
     const result = allAuthors.filter(author =>
-      author.name.toLowerCase().includes(value.toLowerCase())
+      author.name.toLowerCase().includes(value.toLowerCase()),
     );
 
     setSearchResult(result);

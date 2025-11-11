@@ -1,7 +1,6 @@
-import { FaCheckCircle } from 'react-icons/fa';
-import { MdError } from 'react-icons/md';
-import { FaInfoCircle } from 'react-icons/fa';
 import { AnimatePresence, motion } from 'motion/react';
+import { FaCheckCircle, FaInfoCircle } from 'react-icons/fa';
+import { MdError } from 'react-icons/md';
 
 const Notification = ({ type, message, className = '' }) => {
   const styles = {

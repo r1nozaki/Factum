@@ -1,9 +1,9 @@
-import { AnimatePresence, motion } from 'motion/react';
 import { Search } from 'lucide-react';
-import { lenis } from '../../lenisInstance';
-import Label from '../UI/Label';
-import BtnLink from '../UI/BtnLink';
+import { AnimatePresence, motion } from 'motion/react';
 import useBlockScroll from '../../hooks/useBlockScroll';
+import { lenis } from '../../lenisInstance';
+import BtnLink from '../UI/BtnLink';
+import Label from '../UI/Label';
 
 const HeaderSearch = ({ search, setOpenSearch, query, setQuery, onSearch }) => {
   const handleSearch = () => {

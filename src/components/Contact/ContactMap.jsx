@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ContactMap = () => {
   return (
     <div className='relative w-full h-64 sm:h-80 md:h-[470px] row-start-1 md:row-start-auto rounded-lg skeleton'>

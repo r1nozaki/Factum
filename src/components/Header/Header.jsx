@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import HeaderNavigation from './HeaderNavigation';
+import Logo from '../../components/common/Logo';
 import HeaderMenu from './HeaderMenu';
+import HeaderNavigation from './HeaderNavigation';
 import HeaderSearch from './HeaderSearch';
 import HeaderSubscribe from './HeaderSubscribe';
-import Logo from '../../components/common/Logo';
 
 const Header = () => {
   const [menu, setOpenMenu] = useState(false);

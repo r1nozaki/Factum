@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { getPageCount } from '../utils/pages';
 
 const usePagination = ({ totalCount = 0, limit = 10 }) => {
@@ -24,7 +24,7 @@ const usePagination = ({ totalCount = 0, limit = 10 }) => {
         setPage(getPageCount(newCount, limit));
       }
     },
-    [page, limit]
+    [page, limit],
   );
 
   return { page, totalPages, setPage, nextPage, prevPage, setTotalCount };

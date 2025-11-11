@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { PropagateLoader } from 'react-spinners';
 import { getNewsByPublishedDate } from '../../services/NewsServices';
 import NewsCard from '../NewsCard/NewsCard';
 import Banner from '../UI/Banner';
-import { PropagateLoader } from 'react-spinners';
 
 const NewsByPublishedDate = () => {
   const { publishedDate } = useParams();
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -46,22 +46,29 @@ const NewsByPublishedDate = () => {
   }
 
   return (
-    <section className='relative w-full mt-8 mb-10'>
-      <Banner title='Search' description={`Published Date: ${publishedDate}`} />
+    <>
+      <title>{publishedDate}</title>
+      <meta name='content' description='All news by date' />
+      <section className='relative w-full mt-8 mb-10'>
+        <Banner
+          title='Search'
+          description={`Published Date: ${publishedDate}`}
+        />
 
-      <div className='grid w-full gap-5 mb-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-6'>
-        {news.map(item => (
-          <NewsCard
-            key={item.id}
-            id={item.id}
-            src={item.image}
-            publishedDate={item.publishedDate}
-            description={item.description}
-            title={item.title}
-          />
-        ))}
-      </div>
-    </section>
+        <div className='grid w-full gap-5 mb-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-6'>
+          {news.map(item => (
+            <NewsCard
+              key={item.id}
+              id={item.id}
+              src={item.image}
+              publishedDate={item.publishedDate}
+              description={item.description}
+              title={item.title}
+            />
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

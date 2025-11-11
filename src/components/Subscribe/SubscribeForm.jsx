@@ -1,11 +1,11 @@
+import emailjs from '@emailjs/browser';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { ArchiveRestore, Mail, MailPlus } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import Label from '../UI/Label';
 import Btn from '../UI/Btn';
-import emailjs from '@emailjs/browser';
-import { Mail, MailPlus, ArchiveRestore } from 'lucide-react';
+import Label from '../UI/Label';
 
 const schema = yup.object().shape({
   email: yup

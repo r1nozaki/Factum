@@ -7,6 +7,8 @@ import {
   GirlAva6,
   GirlAva7,
   ManAva1,
+  ManAva10,
+  ManAva11,
   ManAva2,
   ManAva3,
   ManAva4,
@@ -15,8 +17,6 @@ import {
   ManAva7,
   ManAva8,
   ManAva9,
-  ManAva10,
-  ManAva11,
 } from '../assets/AuthorsAvatars/index';
 
 const allAuthors = [

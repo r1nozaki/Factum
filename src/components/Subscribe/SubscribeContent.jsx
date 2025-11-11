@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import SubscribeForm from './SubscribeForm';
 import Notification from '../common/Notification';
+import SubscribeForm from './SubscribeForm';
 
 const SubscribeContent = ({ className = '' }) => {
   const [success, setSuccess] = useState(false);

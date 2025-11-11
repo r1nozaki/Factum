@@ -1,5 +1,5 @@
-import { Link } from 'react-router';
 import { Newspaper } from 'lucide-react';
+import { Link } from 'react-router';
 
 const Logo = ({ white }) => {
   return (

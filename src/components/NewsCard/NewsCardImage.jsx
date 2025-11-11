@@ -13,7 +13,7 @@ const NewsCardImage = ({ src, alt, id }) => {
       <img
         src={src}
         alt={alt}
-        className='absolute top-0 left-0 w-full h-full object-cover object-center will-change-transform transition-all duration-500 group-hover:scale-110 group-hover:brightness-75'
+        className='absolute top-0 left-0 object-cover object-center w-full h-full transition-all duration-500 will-change-transform group-hover:scale-110 group-hover:brightness-75'
       />
     </div>
   );

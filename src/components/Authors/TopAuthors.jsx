@@ -1,6 +1,6 @@
-import AuthorCard from './AuthorCard';
-import BtnLink from '../UI/BtnLink';
 import { topAuthors } from '../../data/Authors';
+import BtnLink from '../UI/BtnLink';
+import AuthorCard from './AuthorCard';
 
 const TopAuthors = () => {
   return (

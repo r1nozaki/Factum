@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { getNewsByCategory } from '../../services/NewsServices';
-import BtnLink from '../UI/BtnLink';
-import NewsCard from '../NewsCard/NewsCard';
+import { useEffect, useState } from 'react';
 import { PropagateLoader } from 'react-spinners';
+import { getNewsByCategory } from '../../services/NewsServices';
+import NewsCard from '../NewsCard/NewsCard';
+import BtnLink from '../UI/BtnLink';
 
 const SportsSection = () => {
   const [newsCategory, setNewsCategory] = useState(null);

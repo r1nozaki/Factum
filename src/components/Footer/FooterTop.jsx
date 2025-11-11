@@ -18,12 +18,12 @@ const FooterTop = () => {
   ];
 
   return (
-    <div className='w-full px-4 sm:px-5 py-8 sm:py-10 md:py-12 xl:py-16'>
-      <div className='flex flex-col md:flex-row items-center  justify-between w-full max-w-screen-2xl m-auto'>
+    <div className='w-full px-4 py-8 sm:px-5 sm:py-10 md:py-12 xl:py-16'>
+      <div className='flex flex-col items-center justify-between w-full m-auto md:flex-row max-w-screen-2xl'>
         <div className='flex flex-col gap-5 md:gap-10 lg:gap-20 w-full md:max-w-[400px] lg:max-w-[440px] mb-8 sm:mb-10 md:mb-0'>
           <div>
             <Logo white={true} />
-            <p className='text-white/80 text-base mt-3 lg:mt-4'>
+            <p className='mt-3 text-base text-white/80 lg:mt-4'>
               A reporter gathers, investigates, and presents news and current
               events through various media platforms.
             </p>

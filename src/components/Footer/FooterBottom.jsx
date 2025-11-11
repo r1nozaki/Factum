@@ -2,8 +2,8 @@ import { Link } from 'react-router';
 
 const FooterBottom = () => {
   return (
-    <div className='w-full p-4 sm:p-5 border-t border-white/40 text-white/80'>
-      <div className='flex flex-col md:flex-row justify-between w-full text-center md:text-left max-w-screen-2xl m-auto'>
+    <div className='w-full p-4 border-t sm:p-5 border-white/40 text-white/80'>
+      <div className='flex flex-col justify-between w-full m-auto text-center md:flex-row md:text-left max-w-screen-2xl'>
         <p className='text-sm w-full md:w-auto mb-2.5 md:mb-0'>
           <span>Design by </span>
           <Link to='/' className='underline'>
@@ -18,7 +18,7 @@ const FooterBottom = () => {
             Ivan Zahorui
           </a>
         </p>
-        <p className='text-sm w-full md:w-auto'>
+        <p className='w-full text-sm md:w-auto'>
           Copyright © 2025 Factum. All rights reserved.
         </p>
       </div>

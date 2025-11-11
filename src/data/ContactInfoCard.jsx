@@ -1,4 +1,4 @@
-import { MapPinned, MailPlus, PhoneCall } from 'lucide-react';
+import { MailPlus, MapPinned, PhoneCall } from 'lucide-react';
 
 const cardInfo = [
   {

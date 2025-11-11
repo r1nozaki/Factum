@@ -8,7 +8,7 @@ const CategoryList = () => {
         <NavLink
           key={category.title}
           to={category.link}
-          className='group mb-4 '
+          className='mb-4 group '
         >
           {({ isActive }) => (
             <>

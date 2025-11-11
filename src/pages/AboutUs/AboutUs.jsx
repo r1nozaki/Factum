@@ -1,14 +1,16 @@
-import Banner from '../../components/UI/Banner';
+import { About1, About2 } from '../../assets/AboutImg';
 import AboutInfo from '../../components/About/AboutInfo';
 import WhoWeAre from '../../components/About/WhoWeAre';
 import TopAuthors from '../../components/Authors/TopAuthors';
 import Category from '../../components/Category/Category';
 import Subscribe from '../../components/Subscribe/Subscribe';
-import { About1, About2 } from '../../assets/AboutImg';
+import Banner from '../../components/UI/Banner';
 import { aboutContent1, aboutContent2 } from '../../data/About';
 const AboutUs = () => {
   return (
     <>
+      <title>About us</title>
+      <meta name='content' description='About Factum'></meta>
       <Banner
         title={'About Us'}
         description={

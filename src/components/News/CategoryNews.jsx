@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import { getNewsByCategory } from '../../services/NewsServices';
+import { useEffect, useState } from 'react';
+import { PropagateLoader } from 'react-spinners';
 import usePagination from '../../hooks/usePagination';
+import { getNewsByCategory } from '../../services/NewsServices';
+import AboutBanner from '../About/AboutBanner';
+import CategoryList from '../Category/CategoryList';
 import NewsCard from '../NewsCard/NewsCard';
 import Pagination from '../UI/Pagination';
-import CategoryList from '../Category/CategoryList';
-import AboutBanner from '../About/AboutBanner';
-import { PropagateLoader } from 'react-spinners';
 
 const CategoryNews = ({ category, title, totalCount = 20 }) => {
   const [news, setNews] = useState(null);
